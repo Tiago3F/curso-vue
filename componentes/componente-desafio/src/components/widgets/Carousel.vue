@@ -11,7 +11,6 @@
 
 <script>
 export default { 
-    // teste 123
     data() {
     return {
       fotos: [
