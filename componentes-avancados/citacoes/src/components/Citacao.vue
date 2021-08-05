@@ -1,5 +1,11 @@
 <template>
     <div class="citacao">
+        <div class="autor">
+            <slot name="autor"></slot>
+        </div>
+        
+        <slot name="texto"></slot>
+        <slot name="fonte"></slot>
         <!-- {{ texto }} -->
     </div>
 </template>
@@ -7,6 +13,18 @@
 <script>
 export default {
     // props: ['texto']
+    created(){
+        console.log('created')
+    },
+    destroyed() {
+        console.log('destroyed')
+    },
+    activated(){
+        console.log('activated')
+    },
+    deactivated() {
+        console.log('deactivated')
+    }
 }
 </script>
 
@@ -17,4 +35,9 @@ export default {
         padding: 25px;
         max-width: 450px;
     }
+
+    /* .autor {
+       float: right; 
+    } */
+
 </style>

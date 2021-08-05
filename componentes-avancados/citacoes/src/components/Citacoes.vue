@@ -5,7 +5,9 @@
             <button @click="numero++">&gt;</button>
         </span>
         <Citacao>
-            <p>{{ citacoes[indice].texto }}</p>
+            <h1 slot="autor">{{ citacoes[indice].autor }}</h1>
+            <p slot="texto">{{ citacoes[indice].texto }}</p>
+            <h6 slot="fonte">{{ citacoes[indice].fonte }}</h6>
         </Citacao>
     </div>
 </template>
@@ -36,7 +38,7 @@ export default {
     },
     computed: {
         indice() {
-            return Math.abs(this.numero % 3)
+            return Math.abs(this.numero % 3) // Percorre o indice de "citacoes".
         }
     }
 }
@@ -48,4 +50,5 @@ export default {
         flex-direction: column;
         align-items: center;
     }
+
 </style>
